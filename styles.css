@@ -1,0 +1,173 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .profile-circle {
+    width: 40px;
+    height: 40px;
+    background-color: purple;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .header-text {
+    flex-grow: 1;
+  }
+
+  .header-icons {
+    display: flex;
+    gap: 10px;
+  }
+
+
+
+
+  .container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .details {
+    flex-grow: 1;
+    margin-left: 12px;
+  }
+  
+  .details h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .details p {
+    margin: 4px 0;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .available {
+    color: green;
+    font-weight: 600;
+  }
+  
+  .rating {
+    text-align: right;
+  }
+  
+  .rating span {
+    color: #4caf50;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .skills {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .skills span {
+    background-color: #eef;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .actions p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .call {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .internet-call {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .schedule {
+    background-color: #f1c40f;
+    color: white;
+  }
+
+
+  .nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+  }
+
+  .nav-bar a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

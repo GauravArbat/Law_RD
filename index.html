@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalKart App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background-color: white;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .profile-circle {
+      width: 40px;
+      height: 40px;
+      background-color: purple;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .header-text {
+      flex-grow: 1;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .balance-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .balance-card .amount {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: 1px solid purple;
+      color: purple;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .button.buy {
+      background-color: purple;
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .grid-item {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .grid-item img {
+      max-width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+.how-to-talk h2, .top-lawyers h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step img {
+  width: 50px;
+  height: 50px;
+  margin-right: 16px;
+}
+
+.step p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.top-lawyers {
+  margin-top: 20px;
+}
+
+.lawyers-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.lawyer {
+  text-align: center;
+  width: 80px;
+}
+
+.lawyer img {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #4caf50;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.lawyer p {
+  font-size: 12px;
+  color: #333;
+  margin: 0;
+}
+.top-lawyers h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  padding-left: 10px;
+}
+
+.lawyers-carousel {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 16px;
+  padding: 10px 0;
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+.lawyers-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.lawyers-carousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.lawyers-carousel::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+.lawyer {
+  flex: 0 0 auto; /* Prevent shrinking */
+  text-align: center;
+  width: 120px; /* Fixed width for each profile */
+}
+
+.lawyer img {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #4caf50; /* Green border */
+  border-radius: 50%; /* Circular image */
+  margin-bottom: 8px;
+}
+
+.lawyer p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Add some padding for the overall section */
+section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="profile-circle">8</div>
+    <div class="header-text">
+      <p>Hi, gaurav</p>
+    </div>
+    <div class="header-icons">
+      <span>🔔</span>
+      <span>❤️</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="balance-card">
+      <p>Legal cash balance</p>
+      <div class="amount">₹199</div>
+      <p>Expires in: 23 hours</p>
+      <div class="buttons">
+        <a href="#" class="button buy">Buy LKC</a>
+        <a href="#" class="button">Transactions</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="grid-item">
+        <img src="image1.png" alt="Talk to Lawyer">
+        <p>Talk to Lawyer</p>
+        <small>Instant consultation with Lawyer</small>
+      </div>
+      <div class="grid-item">
+        <img src="img.png" alt="Vehicle challan">
+        <p>Vehicle challan</p>
+        <small>Check your challan status</small>
+      </div>
+    </div>
+    <section class="how-to-talk">
+        <h2>How to talk to a Lawyer</h2>
+        <div class="steps">
+          <div class="step">
+            <img src="https://via.placeholder.com/50" alt="Select amount">
+            <p>Select the amount of LegalKart cash you want to recharge.</p>
+          </div>
+          <div class="step">
+            <img src="https://via.placeholder.com/50" alt="Make payment">
+            <p>Make payment</p>
+          </div>
+          <div class="step">
+            <img src="https://via.placeholder.com/50" alt="Search lawyer">
+            <p>Search the Lawyer you wish to consult.</p>
+          </div>
+        </div>
+      </section>
+      
+      
+    <section class="top-lawyers">
+        <h2>Our top lawyers</h2>
+        <div class="lawyers-carousel">
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Karan">
+            <p>Karan</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer1.jpg" alt="Arjun">
+            <p>Arjun</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer2.jpg" alt="Vasanth">
+            <p>Vasanth</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Puneet">
+            <p>Puneet</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Karan">
+            <p>Karan</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer1.jpg" alt="Arjun">
+            <p>Arjun</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer2.jpg" alt="Vasanth">
+            <p>Vasanth</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Puneet">
+            <p>Puneet</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Karan">
+            <p>Karan</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer1.jpg" alt="Arjun">
+            <p>Arjun</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer2.jpg" alt="Vasanth">
+            <p>Vasanth</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Puneet">
+            <p>Puneet</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Karan">
+            <p>Karan</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer1.jpg" alt="Arjun">
+            <p>Arjun</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer2.jpg" alt="Vasanth">
+            <p>Vasanth</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Puneet">
+            <p>Puneet</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Karan">
+            <p>Karan</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer1.jpg" alt="Arjun">
+            <p>Arjun</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer2.jpg" alt="Vasanth">
+            <p>Vasanth</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Puneet">
+            <p>Puneet</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Karan">
+            <p>Karan</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer1.jpg" alt="Arjun">
+            <p>Arjun</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer2.jpg" alt="Vasanth">
+            <p>Vasanth</p>
+          </div>
+          <div class="lawyer">
+            <img src="lawyer.jpg" alt="Puneet">
+            <p>Puneet</p>
+          </div>
+         
+        </div>
+      </section>
+      
+      
+  </div>
+
+  <div class="nav-bar">
+    <a href="#">
+      <span>🏠</span>
+      Home
+    </a>
+    <a href="lawyer.html">
+      <span>📞</span>
+      TalkToLawyer
+    </a>
+    <a href="#">
+      <span>🛒</span>
+      Product
+    </a>
+    <a href="#">
+      <span>📦</span>
+      Order
+    </a>
+  </div>
+
+
+</body>
+</html>
